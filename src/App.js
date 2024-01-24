@@ -1,7 +1,7 @@
 
-import ExpenseItem from "./component/ExpenseItem";
+import ExpenseItem from "./component/Expenses/ExpenseItem";
 
-function App() {
+const App = ()=> {
 
   const expenses = [
     {
