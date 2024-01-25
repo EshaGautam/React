@@ -36,9 +36,9 @@ const App = ()=> {
  ];
   return (
     <div>
- 
+   <ExpenseForm/>
       <Expenses items={expenses}/>
-      <ExpenseForm/>
+    
     </div>
   );
 }
