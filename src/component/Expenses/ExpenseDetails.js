@@ -1,4 +1,5 @@
-import "./ExpenseItem.css";
+import "./ExpenseDetails.css"
+
 
 const ExpenseDetails = (props) => {
   return (
