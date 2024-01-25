@@ -1,5 +1,6 @@
-
+import React from "react";
 import Expenses from "./component/Expenses/Expenses";
+import ExpenseForm from "./component/Expenses/ExpenseForm";
 
 const App = ()=> {
 
@@ -37,6 +38,7 @@ const App = ()=> {
     <div>
  
       <Expenses items={expenses}/>
+      <ExpenseForm/>
     </div>
   );
 }
