@@ -4,6 +4,9 @@
  import Card from '../UI/Card';
 
 function ExpenseItem(props){
+  const deleteExp =()=>{
+    console.log("Expense Deleted")
+  }
     return (
    
         <Card className="expense-item">
@@ -13,6 +16,7 @@ function ExpenseItem(props){
             amount={props.amount}
             location={props.location}
           />
+          <button onClick={deleteExp}>Delete-Expense</button>
         </Card>
      
     );
