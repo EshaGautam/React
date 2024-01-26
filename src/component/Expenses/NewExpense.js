@@ -10,7 +10,7 @@ const handleSubmitOfNewData = (enteredData) =>{
          id:Math.random().toString()
     }
     props.onAddingData(ExpenseData)
-    console.log(ExpenseData)
+  
 }
 
     return(
