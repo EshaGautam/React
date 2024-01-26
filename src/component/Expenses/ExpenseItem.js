@@ -13,7 +13,7 @@ function ExpenseItem(props){
 
   const deleteExp =()=>{ console.log("Expense Deleted")}
     return (
-   
+      <li>
         <Card className="expense-item">
           <ExpenseDate date={props.date} />
           <ExpenseDetails
@@ -21,10 +21,10 @@ function ExpenseItem(props){
             amount={amount}
             location={props.location}
           />
-          <button onClick = {ChangeExp}>Change-Expense</button>
+          <button onClick={ChangeExp}>Change-Expense</button>
           <button onClick={deleteExp}>Delete-Expense</button>
         </Card>
-     
+      </li>
     );
 }
 
