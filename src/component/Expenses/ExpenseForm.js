@@ -2,7 +2,10 @@ import React from "react";
 import { useState } from "react";
 import "./ExpenseForm.css";
 
-function ExpenseForm() {
+
+function ExpenseForm(props){
+
+
   const[enteredtitle,setTitle]= useState('');
   const[enteredamount,setAmount]= useState('');
   const[entereddate,setDate]= useState('');
@@ -55,26 +58,33 @@ function ExpenseForm() {
 
   const SubmitForm = (event) =>{
     event.preventDefault()
-  const ExpenseData = {
+  //storing value of input fields on object to display it on the screen (for newexpense)
+   const ExpenseData = {
     title:enteredtitle,
     amount:enteredamount,
     date:new Date(entereddate),
   }      
-  console.log(ExpenseData);
+  //we are passing ExpenseData using props which will used by parent component
+  props.onSubmitNewData(ExpenseData)
+  // after submitting the form input fields cleared
+  setTitle('');
+  setAmount('');
+  setDate('')
  
   }
 
   return (
-    <form onSubmit={SubmitForm} className="new-expense">
+    <form onSubmit={SubmitForm} >
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={handleTitleChange} />
+          <input type="text" value={enteredtitle} onChange={handleTitleChange} />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
           <input
             type="number"
+            value={enteredamount}
             min="0.01"
             step="0.01"
             onChange={handleAmountChange}
@@ -84,8 +94,9 @@ function ExpenseForm() {
           <label>Date</label>
           <input
             type="date"
+            value={entereddate}
             min="2019-01-01"
-            max="2020-12-31"
+            max="2024-12-31"
             onChange={handleDateChange}
           />
         </div>
