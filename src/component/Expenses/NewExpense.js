@@ -1,7 +1,7 @@
 import React from "react";
 import ExpenseForm from "./ExpenseForm";
 
-function NewExpense(){
+function NewExpense(props){
  
 const handleSubmitOfNewData = (enteredData) =>{
 
@@ -9,6 +9,7 @@ const handleSubmitOfNewData = (enteredData) =>{
         ...enteredData,
          id:Math.random().toString()
     }
+    props.onAddingData(ExpenseData)
     console.log(ExpenseData)
 }
 

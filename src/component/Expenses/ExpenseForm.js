@@ -9,6 +9,7 @@ function ExpenseForm(props){
   const[enteredtitle,setTitle]= useState('');
   const[enteredamount,setAmount]= useState('');
   const[entereddate,setDate]= useState('');
+  const[enteredlocation,setLocation] = useState('')
 
   // managing multiple states using single use state
 
@@ -55,6 +56,10 @@ function ExpenseForm(props){
     //    return { ...prevState, enteredDate: newDate};
     //  });
   };
+  const handleLocationChange =(event)=>{
+    let newLocation = event.target.value;
+    setLocation(newLocation)
+  }
 
   const SubmitForm = (event) =>{
     event.preventDefault()
@@ -63,6 +68,7 @@ function ExpenseForm(props){
     title:enteredtitle,
     amount:enteredamount,
     date:new Date(entereddate),
+    location:enteredlocation,
   }      
   //we are passing ExpenseData using props which will used by parent component
   props.onSubmitNewData(ExpenseData)
@@ -70,6 +76,7 @@ function ExpenseForm(props){
   setTitle('');
   setAmount('');
   setDate('')
+  setLocation('')
  
   }
 
@@ -98,6 +105,14 @@ function ExpenseForm(props){
             min="2019-01-01"
             max="2024-12-31"
             onChange={handleDateChange}
+          />
+          </div>
+        <div className="new-expense__control">
+          <label>Location</label>
+          <input
+            type="text"
+            value={enteredlocation}
+            onChange={handleLocationChange}
           />
         </div>
       </div>
