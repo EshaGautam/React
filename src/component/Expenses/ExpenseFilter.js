@@ -1,7 +1,7 @@
  import './ExpenseFilter.css'
  function ExpenseFilter(props){
     const dropDownChangeHandler =(event)=>{
-props.onYearChange(event.target.value);
+ props.onYearChange(event.target.value);
     }
     return(
         <div className='expense-filter'>
