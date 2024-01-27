@@ -4,7 +4,7 @@ import{ useState } from "react";
  import ExpenseDate from './ExpenseDate'; 
  import ExpenseDetails from './ExpenseDetails';
  import Card from '../UI/Card';
-
+import './ExpenseList.css'
 function ExpenseItem(props){
 
   const [amount,setAmount] = useState(props.amount);
@@ -13,7 +13,7 @@ function ExpenseItem(props){
 
   const deleteExp =()=>{ console.log("Expense Deleted")}
     return (
-      <li>
+      <li className="expenses-list">
         <Card className="expense-item">
           <ExpenseDate date={props.date} />
           <ExpenseDetails
