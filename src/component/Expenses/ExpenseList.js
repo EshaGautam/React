@@ -7,6 +7,7 @@ function ExpenseList(props){
   //if it has some content this will run
 
   if (props.items.length === 0) {
+    
     return <h2 className="expense-list__fallback">No Expense Found</h2>
   }
 
